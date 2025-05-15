@@ -1,19 +1,20 @@
 <div
-    class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl overflow-hidden flex flex-col w-full h-[400px] transition-transform hover:scale-[1.01]">
-    <div class="flex-1 w-full h-1/2 overflow-hidden">
-        <img [src]="meme.url" [alt]="meme.name" class="w-full h-full object-cover" />
-    </div>
+  class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl overflow-hidden flex flex-col w-full h-[400px] transition-transform hover:scale-[1.01]">
 
-    <div class="p-4 flex flex-col items-center justify-between h-1/2">
-        <h3 class="text-sm font-semibold text-gray-900 dark:text-white text-center mb-2 line-clamp-2">
-            {{ meme.name }}
-        </h3>
+  <div class="w-full h-[70%] overflow-hidden">
+    <img [src]="meme.url" [alt]="meme.name" class="w-full h-full object-cover shadow" />
+  </div>
 
-        <button (click)="addLike()"
-            class="cursor-pointer px-4 py-1 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition text-sm">
-            👍 Like
-        </button>
+  <div class="h-[30%] p-3 flex flex-col justify-between items-center">
+    <h3 class="text-sm font-semibold text-gray-900 dark:text-white text-center line-clamp-2">
+      {{ meme.name }}
+    </h3>
 
-        <p class="mt-1 text-xs text-gray-700 dark:text-gray-300">Likes: {{ likes }}</p>
-    </div>
+    <button (click)="addLike()"
+      class="cursor-pointer px-4 py-1 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition text-sm">
+      👍 Like
+    </button>
+
+    <p class="text-xs text-gray-700 dark:text-gray-300">Likes: {{ likes }}</p>
+  </div>
 </div>

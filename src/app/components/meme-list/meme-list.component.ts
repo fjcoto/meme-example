@@ -5,11 +5,10 @@ import { MemeCardComponent } from "../../shared/components/meme-card/meme-card.c
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-meme-list',
-  standalone: true,
-  imports: [MemeCardComponent],
-  templateUrl: './meme-list.component.html',
-  styleUrl: './meme-list.component.css'
+    selector: 'app-meme-list',
+    imports: [MemeCardComponent],
+    templateUrl: './meme-list.component.html',
+    styleUrl: './meme-list.component.css'
 })
 export class MemeListComponent {
 memes: MemeDTO[] = [];
