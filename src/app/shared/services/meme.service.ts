@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
-import { MemeDTO } from '../models/meme.dto';
+import { MemeDTO, MemeApiResponse } from '../models/meme.dto';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +13,8 @@ export class MemeService {
   constructor(private http: HttpClient) { }
 
   getMemes(): Observable<MemeDTO[]> {
-    return this.http.get<any>(this.apiUrl).pipe(
-      map(response => response?.data?.memes || [])
+    return this.http.get<MemeApiResponse>(this.apiUrl).pipe(
+      map(response => response.data?.memes || [])
     );
   }
 
