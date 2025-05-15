@@ -1,0 +1,29 @@
+<nav class="bg-white dark:bg-gray-800 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex items-center">
+                <img src="/meme-example.png" alt="Logo" class="h-8 w-auto">
+            </div>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="/" class="text-gray-700 dark:text-gray-200 hover:text-blue-500">Home</a>
+                <a href="/random" class="text-gray-700 dark:text-gray-200 hover:text-blue-500">Random</a>
+            </div>
+
+            <div class="md:hidden flex items-center">
+                <button (click)="toggleMenu()" class="text-gray-700 dark:text-white focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path [attr.d]="menuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    @if(menuOpen){
+    <div class="md:hidden px-4 pt-2 pb-4 space-y-2">
+        <a href="/" class="block text-gray-700 dark:text-gray-200 hover:text-blue-500">Home</a>
+        <a href="/random" class="block text-gray-700 dark:text-gray-200 hover:text-blue-500">Random</a>
+    </div>
+    }
+</nav>
